@@ -75,10 +75,10 @@ static int colorCorner = 20;
                            @"green",@"blue",@"purple"];
     self.extraButton.layer.cornerRadius = AD(colorCorner);
     NSString * color = colorArr[self.extraButton.tag - 1];
-    if ([color isEqualToString:@"orange"]) {
-        color = @"cyan";
-    }
     NSString * selName = [NSString stringWithFormat:@"%@Color",color];
+    if ([color isEqualToString:@"orange"]) {
+        selName = @"cyanColor";
+    }
     SEL colorSEL = NSSelectorFromString(selName);
     [self.extraButton setTitle:@"" forState:UIControlStateNormal];
     self.extraButton.backgroundColor = [UIColor performSelector:colorSEL withObject:nil];
