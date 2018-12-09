@@ -75,7 +75,7 @@
         self.titleLabel.backgroundColor = [UIColor redColor];
     }
     else if ([step.color isEqualToString:@"orange"]) {
-        self.titleLabel.backgroundColor = [UIColor orangeColor];
+        self.titleLabel.backgroundColor = [UIColor cyanColor];
     }
     else if ([step.color isEqualToString:@"yellow"]) {
         self.titleLabel.backgroundColor = [UIColor yellowColor];
