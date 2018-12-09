@@ -152,16 +152,19 @@
     int hit = 0;
     for (NSArray * times in timeArr) {
         for (int i = 0; i < times.count; i++) {
-            //获取玩法中每一步的时间
-            NSDictionary * step = steps[i];
-            float stepTime = [step[@"time"] floatValue];
-            //获取收到的时间
-            float time = [times[i] floatValue];
-            if (stepTime == 0) {
-                hit ++;
-            }else{
-                if (time < stepTime) {
+            //防止玩法对不上步数越界
+            if(i < steps.count){
+                //获取玩法中每一步的时间
+                NSDictionary * step = steps[i];
+                float stepTime = [step[@"time"] floatValue];
+                //获取收到的时间
+                float time = [times[i] floatValue];
+                if (stepTime == 0) {
                     hit ++;
+                }else{
+                    if (time < stepTime) {
+                        hit ++;
+                    }
                 }
             }
         }
